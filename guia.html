@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="Description" content="DOMLauncher and DOMods, custom HTML5 Android Launcher.">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="js/loading.min.css">
+	
+	
+	<link rel="stylesheet" href="font/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/stylesv2.css?v=1">
+
+	<title>Home</title>
+
+	<script src="js/jquery-3.3.1.min.js"></script> 
+	<script src="js/bootstrap.min.js"></script> 
+	<script src="js/jquery.navigate.js"></script>
+	<script src="js/custom-keyboard-navigation.js"></script>
+   	<script type="text/javascript" src="file:///android_asset/www/cordova.js"></script> 
+	<script src="js/zepto.min.js"></script>
+	<script src="js/jquery.loading.min.js"></script> 
+
+<style>
+
+
+@font-face {
+    font-family: HypatiaSansPro;
+    src: url("/fonts/HypatiaSansPro-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: HypatiaSansPro;
+    font-weight: bold;
+    src: url("/fonts/HypatiaSansPro-Bold.otf") format("opentype");
+}
+
+.contenidox {
+	margin: 0;
+	padding: 0;
+	overflow-x:hidden;
+    font-size:16px;
+    font-family: 'HypatiaSansPro', sans-serif !important;
+    line-height:32px;
+    font-weight:400;
+}
+
+.titulox {
+	font-weight: bold;
+    font-variant: petite-caps;
+    font-size:25px;
+    line-height:32px;
+	
+}
+
+.margen {
+	    margin-bottom: 20px;
+	}
+
+</style>
+</head>
+
+<body class="bg-secondary bg-img">
+	<!-- HEADER -->
+	<nav id="top-nav" class="navbar navbar-dark bg-gradient-up-down notranslate">
+		<ul class="navbar-nav">
+			<li class="nav-item ml-3  mt-3">
+				<h3 class="text-white">
+					<div class="d-inline-block" id="fecha_top">
+					Movich Hotels |
+					</div>
+					<div class="d-inline-block"> Cali - <span id="hora_top">Colombia</span> | 
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" data-toggle="collapse" data-target="#messagesContainer" aria-expanded="false" aria-controls="variable_info2">
+					  		
+								<span class="notify-badge">0</span>
+					      		<img src="./imagesjv/icon_envelope.svg"  alt="" />
+					      		<!--<span class="fa fa-envelope"></span>-->
+							
+						</a> |
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('es')">
+					      		<img src="./imgs/es.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('en')">
+					      		<img src="./imgs/en.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('pt')">
+					      		<img src="./imgs/pt.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('fr')">
+					      		<img src="./imgs/fr.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('hi')">
+					      		<img src="./imgs/hi.png" height="25px" width="auto" alt="Translate">
+						</a>
+						
+					</div><div id="google_translate_element" style="display:none !important"></div>
+					
+				</h3>
+			</li>
+		</ul>
+
+		<a class="navbar-brand" href="#" onClick="ajustes()">
+			<img src="./imagesjv/icon_logo.svg" class="align-top" alt="Movich Hotels logo">
+		</a>
+	</nav>
+    <audio id="mensajeaudio" src="mensaje.mp3" preload="auto"></audio>
+
+	<!-- MESSAGES -->
+	<div class="messages-container collapse" id="messagesContainer">
+		<button type="button" class="close text-white px-1 selectable-contour selectable " data-toggle="collapse" data-target="#messagesContainer" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+  		</button>
+		<div class="message">
+			<p class="text-justify"><span class="fa fa-caret-right"></span>Mensaje de prueba </p>
+		</div>
+	</div>
+
+	<!--CONTENT-->
+	<div class="container">
+		<div class="row">
+
+			<!--INFO-->
+			<div class="col-lg-4">
+				<div class="card bg-overlay text-white info-list overflow-auto">
+					<div class="card-body">
+						<a href="./guialocal.html" class="back-btn selectable">
+						<i class="fa fa-chevron-left fa-1.5x"></i>
+						</a>
+						<h4 class="section-title mx-2">
+							Guia Local
+						</h4>
+						<div class="clearfix"></div>
+						
+						<nav class="navbar" id="variable_infoParent">
+						
+						
+							<div class="navbar-nav w-100">
+								<!--ITEM 1-->
+
+								<button id="selectedDefault" type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									Lo Imperdible
+								</button>
+								<!--ITEM 2-->
+								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									Cerca del Hotel
+								</button>
+								<!--ITEM 3 -->
+                                <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									Que hacer en la Zona
+								</button>
+								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									24 Horas en la Ciudad
+								</button>
+                                <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									48 Horas en la Ciudad
+								</button>
+								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									72 Horas en la Ciudad
+								</button>
+                                <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									Restaurantes
+							  </button>							
+								
+							</div>
+						</nav>
+					</div>
+				</div>
+				
+					
+			</div>
+
+			<!--VIDEO-->
+			<div class="col-lg-8">
+			  <div id="variableContent" class="card border-0 overflow-auto pt-3" style="display: block;" > 
+
+
+                        <div id="varText" class="card-text my-2 mx-3 text-white contenidox" style="display: block">
+                        <p class="titulox text-center">Lo Imperdible</p>
+                            
+<div class="row margen">Ya sea que tengas medio día, un día o todo el fin de semana disponible, hay planes en Cali para todos los gustos. Estas son algunas recomendaciones para que aproveches tu estadía. <br><br><div class="col-lg-4"><img width="100%" src="imgs/guia/c1.png"></div><div class="col-lg-7"><span class="titulox">•Malecón Puerta de Oro: </span>Puedes disfrutar una caminata por el malecón y tomarte algo con amigos. Se puede iniciar la noche, tardeando en esta locación y después buscar otras actividades</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c2.png"></div><div class="col-lg-7"><span class="titulox">•Ventana al Mundo: </span>No son muchas palabras que uno necesita para describir este colosal monumento que le hace honor a la ciudad y a sus habitantes. El barranquillero no tiene fronteras en su vista ni en su mente para darle rienda suelta a su imaginación. Un aire de libertad y de ensoñación se vive al visitar este monumento. Es muy bonito y la rotonda es agradable, parqueas y puedes sacar fotografías. Se ve increíble tanto de noche como de día.</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c3.png"></div><div class="col-lg-7"><span class="titulox">•Museo del Caribe: </span> Un museo lleno de riqueza cultural, que trasciende Las diferentes épocas de nuestro ancestro cultural, que nos traslada a Las diversas regiones del Caribe en una muestra llena de colorido, creatividad y tradición musical.</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c4.png"></div><div class="col-lg-7"><span class="titulox">•Catedral Maria Reina: </span> La catedral de Cali es una de las obras más importante de esta bella ciudad, un lugar ideal para reflexionar y encontrarse con Dios.</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c5.png"></div><div class="col-lg-7"><span class="titulox">•Castillo de Salgar: </span> Hermoso castillo abierto al público. El horario es de 9am a 6pm. Hay dos restaurantes, pero uno puede hacer picnic y ver el atardecer.</div></div>
+
+                            
+                       
+                        
+                </div>
+                
+				</div>
+                
+                
+                
+				<!--<div style="position: fixed; right: 5%; top: 73%; z-index: 1;"><img id="logolure" style="display: none;" src="imgs/lure.png" ></div>-->
+			</div>
+
+	  </div>
+	</div>
+
+
+
+	<!--FOOTER-->
+	<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark bg-gradient-down-up p-2">
+		<div class="menu">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content2" aria-controls="nav-content2" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span> MENU
+			</button>
+		</div>
+
+
+		<div class="collapse navbar-collapse" id="nav-content2">   
+				<a class="btn menu-icon selectable" href="./tv.html">
+					<div class="col text-center  icon-contour">
+							<img src="./imagesjv/icon_tv.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span>TV</span>
+						
+					</div>
+				</a>
+				
+				<a  class="btn menu-icon selectable" href="./info_hotel.html">
+					<div class="col text-center icon-contour">
+							<img src="./imagesjv/icon_info.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span>INFO HOTEL</span>
+					</div>
+				</a>
+
+			
+			
+			<a class="btn menu-icon selectable" onclick="aaap('com.netflix.mediaclient')" href="#">
+
+				<div class="col text-center  icon-contour">
+					
+						<img src="./imagesjv/icon_netflix.svg">
+						<div class="overlay-darken bg-gradient-down-up"></div>
+						<br>
+						<span >NETFLIX</span>
+					
+				</div>
+			</a>
+
+			
+			
+			<a class="btn menu-icon selectable" href="./room_service.html">
+				<div class="col text-center icon-contour">
+					<img src="./imagesjv/icon_room_service.svg">
+					<div class="overlay-darken bg-gradient-down-up"></div>
+					<br>
+					<span >ROOM SERVICE</span>
+				</div>
+			</a>
+
+			
+			
+			<a class="btn menu-icon selectable" href="./entertaiment.html">
+				<div class="col text-center  icon-contour">
+					
+						<img src="./imagesjv/icon_entretenimiento.svg">
+						<div class="overlay-darken bg-gradient-down-up"></div>
+						<br>
+						<span >ENTRETENIMIENTO</span>
+					
+				</div>
+			</a>
+
+			
+			
+			<a class="btn menu-icon selectable" href="./servicios.html">
+				<div class="col text-center  icon-contour">
+						<img src="./imagesjv/icon_servicios.svg">
+						<div class="overlay-darken bg-gradient-down-up"></div>
+						<br>
+						<span >SERVICIOS</span>
+					
+				</div>
+			</a>
+
+			
+			
+			<a class="btn menu-icon selectable active" href="./guialocal.html">
+				<div class="col text-center  icon-contour">
+					
+						<img src="./imagesjv/icon_guia_local.svg">
+						<div class="overlay-darken bg-gradient-down-up"></div>
+						<br>
+						<span >GUIA LOCAL</span>
+					
+				</div>
+			</a>
+
+			
+			
+			<a class="btn menu-icon selectable" href="./account.html">
+				<div class="col text-center  icon-contour">
+					
+						<img src="./imagesjv/icon_estado_cuenta.svg">
+						<div class="overlay-darken bg-gradient-down-up"></div>
+						<br>
+						<span >ESTADO DE CUENTA</span>
+					
+				</div>
+			</a>
+		</div>
+
+		
+	</nav>
+  <script type="text/javascript">
+  	var displaying='';
+  	function loadContent(btn){
+  		var animation="slideInRight";
+  		$("#variableContent").hide();
+		$("#logolure").hide();
+		$("#varText").hide();
+		$("#varImage").hide();
+  		var btnName=$(btn)[0].innerText;
+  		//$("#varTitle").html(btnName);
+  		switch(btnName){
+			case("Lo Imperdible"):  				
+				$("#varText").html('<div class="row margen">Ya sea que tengas medio día, un día o todo el fin de semana disponible, hay planes en Cali para todos los gustos. Estas son algunas recomendaciones para que aproveches tu estadía. <br><br><div class="col-lg-4"><img width="100%" src="imgs/guia/c1.png"></div><div class="col-lg-7"><span class="titulox">•Malecón Puerta de Oro: </span>Puedes disfrutar una caminata por el malecón y tomarte algo con amigos. Se puede iniciar la noche, tardeando en esta locación y después buscar otras actividades</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c2.png"></div><div class="col-lg-7"><span class="titulox">•Ventana al Mundo: </span>No son muchas palabras que uno necesita para describir este colosal monumento que le hace honor a la ciudad y a sus habitantes. El barranquillero no tiene fronteras en su vista ni en su mente para darle rienda suelta a su imaginación. Un aire de libertad y de ensoñación se vive al visitar este monumento. Es muy bonito y la rotonda es agradable, parqueas y puedes sacar fotografías. Se ve increíble tanto de noche como de día.</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c3.png"></div><div class="col-lg-7"><span class="titulox">•Museo del Caribe: </span> Un museo lleno de riqueza cultural, que trasciende Las diferentes épocas de nuestro ancestro cultural, que nos traslada a Las diversas regiones del Caribe en una muestra llena de colorido, creatividad y tradición musical.</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c4.png"></div><div class="col-lg-7"><span class="titulox">•Catedral Maria Reina: </span> La catedral de Cali es una de las obras más importante de esta bella ciudad, un lugar ideal para reflexionar y encontrarse con Dios.</div></div><div class="row margen"> <div class="col-lg-4"><img id="varImage" width="100%" src="imgs/guia/c5.png"></div><div class="col-lg-7"><span class="titulox">•Castillo de Salgar: </span> Hermoso castillo abierto al público. El horario es de 9am a 6pm. Hay dos restaurantes, pero uno puede hacer picnic y ver el atardecer.</div></div>');
+				$("#varText").show();
+				
+				break;
+  			case("Cerca del Hotel"):
+				$("#varText").html('<div class="row margen">A tan solo unos minutos del hotel podrás disfrutar de tus tardes visitando centros comerciales y complejos acuáticos. <br><br><div class="col-lg-4"><img width="100%" src="imgs/guia/g1.png"></div><div class="col-lg-7"><span class="titulox">•Centro comercial Buenavista: </span>En el Buenavista encuentras de todo, desde hacer mercado, comprar ropa, zapatos, accesorios, como todas las entidades financieras y oficinas de pagos y giros. También ofrece muchas opciones gastronómicas de todos los gustos a buenos precios. De entretenimiento tiene cine Colombia, con toda la cartelera actual y zona de juegos para niños.</div></div><div class="row margen"> <div class="col-lg-4"><img width="100%" src="imgs/guia/g2.png"></div><div class="col-lg-7"><span class="titulox">•Centro comercial Viva : </span>Puedes pasar un día entero recorriendo sus amplios pasillos, mirando vitrinas y comprando las mejores marcas, además de la plaza de comidas y el área de restaurantes en el último piso, con gran variedad de menús nacionales e internacionales.</div></div><div class="row margen"> <div class="col-lg-4"><img width="100%" src="imgs/guia/g3.png"></div><div class="col-lg-7"><span class="titulox">•Complejo deportivo Bosques del Norte (Béisbol, Patinódromo, Futbol 5, Básquet): </span>Un lugar amplio para que los niños puedan correr y disfrutar con diferentes juegos y actividades. Excelente para fiestas infantiles.</div></div>');
+				$("#varText").show();
+				
+				break;
+			case("Que hacer en la Zona"):
+				$("#varText").html('<div class="row margen">La increíble música, gente y comida de este destino te llevará a disfrutar aún más de fantásticos días en esta ciudad.<br><br><div class="col-lg-4"><img width="100%" src="imgs/guia/q1.png"></div><div class="col-lg-7"><span class="titulox">•Zero Gravity Trampoline park : </span>Los niños lo aman, es muy divertido y además les sirve como actividad física, incluso para adultos quienes puedes disfrutar y compartir junto a sus hijos.</div></div><div class="row margen"> <div class="col-lg-4"><img width="100%" src="imgs/guia/q2.png"></div><div class="col-lg-7"><span class="titulox">•Zoológico de Cali: </span>El zoológico de Cali es un lugar interesante para visitar en la ciudad, de allí encontrarás diversas especies nativas y de otros rincones de Colombia y del mundo, siendo uno de los principales atractivos el tití cabeciblanco que se encuentra en vía de extinción, está ubicado en la calle 76 con carrera 68 esquina y puedes llegar utilizando el servicio de transporte articulado Transmetro desde cualquiera de las estaciones que dispone este sistema.</div></div>');
+				$("#varText").show();
+				
+				break;
+  			case("24 Horas en la Ciudad"):
+				$("#varText").html('<div class="row margen"> <div class="col-lg-11"><span class="titulox" style="text-align: center;">SI SOLO TIENE 24 HORAS PARA CONOCER ALGO REPRESENTATIVO DE LA PUERTA DE ORO DE COLOMBIA, DEBE IR A: </span></div><br><br><div class="col-lg-11" style="text-align: justify;">Hoy en día, la arquitectura, diseño urbano e historia de Cali la convierten en un destino popular para los turistas. Aunque tengas poco tiempo, no dejes de visitar los lugares más simbólicos de Cali.<br><br><br>• Barrio El Prado y sus casas republicanas: El Prado es el más importante desarrollo urbanístico de Cali, huella del esplendor que experimentó la ciudad en la década de los años veinte y treinta del siglo pasado. Por sus características, es considerado un proyecto único y pionero en Colombia y América Latina, y así lo reconoce el Ministerio de Cultura al declararlo "Bien de Interés Cultural de carácter Nacional", según Resolución 0087 del 2 de febrero de 2005. <br><br><br>• Casa del Carnaval Ubicada en el barrio Abajo, tradicional sector de Cali, esta joya arquitectónica construida en 1929 conservada su estilo colonial que la familia Caridi Mitriani remodeló en los años 90 y entregó a la Fundación Carnaval de Cali como sede de la organización de la fiesta y punto de encuentro de sus participantes. Mascarás, disfraces y diferentes expresiones de la máxima fiesta se pueden apreciar en la sal interactiva Elsa Caridi un espacio para conocer y disfrutar a través de una experiencia sensorial y didáctica las manifestaciones culturales más representativas del Carnaval de Cali. <br><br><br>• Museo del Caribe: El Museo del Caribe, es el primer museo regional del país. Su tema central es el Caribe colombiano en sus dimensiones ambiental, histórico y sociocultural. El Museo ofrece un espacio para el fortalecimiento de la identidad y la reconstrucción de un imaginario de región. <br><br><br>Presenta las manifestaciones culturales, la memoria histórica de sus pobladores y motiva a una reflexión en torno al medio ambiente, al territorio y a la importancia de estos últimos en el desarrollo de la región.• Malecón Puerta de Oro: Enamorarse del río Magdalena mientras se contempla su paisaje, naturaleza y encanto Caribe se ha convertido en el plan perfecto para los barranquilleros y visitantes, quienes desde el 18 de julio del 2017 disfrutan de la primera etapa Gran Malecón sector Puerta de Oro. Desde su apertura, el proyecto ha recibido el visto bueno de la ciudadanía. Cali está conquistando al río, de nuevo, lo estamos viendo. Este es el gran inicio de la nueva Cali.<br><br><br>• Ventana al Mundo ¡Es imponente! Desde muy lejos se puede apreciar el colorido de "La Ventana al Mundo", el nuevo símbolo al que acuden diariamente cientos de barranquilleros y visitantes para guardar la foto en la rotonda ubicada en la circunvalar, a unos cuantos metros del complejo industrial de Tecnoglass. </div></div>');
+				$("#varText").show();
+				
+				break;
+			case("48 Horas en la Ciudad"):
+				$("#varText").html('<div class="row margen"> <div class="col-lg-11"><span class="titulox" style="text-align: center;">SI SOLO TIENE 48 HORAS PARA CONOCER ALGO REPRESENTATIVO DE LA PUERTA DE ORO DE COLOMBIA, DEBE IR A: </span></div><br><br><div class="col-lg-11" style="text-align: justify;">Cali tiene todo lo que necesitamos para unas vacaciones inolvidables, la cultura caribe está presente en todas partes. Podrás encontrar un plan para todo tipo de turistas.Recorrer sus calles con tesoros coloniales, visitas sus ciénagas, disfrutar de su gastronomía exquisita y sentir la fiesta en cada esquina.<br><br><br>• El museo de béisbol Tomás Arrieta: El museo consta de cuatro bases, como en el diamante. En ellas el público podrá recorrer por la historia de cómo llegó este deporte a la ciudad y conocer de los grandes logros de nuestros peloteros a nivel internacional, entre ellos Édgar Rentería, los hermanos Jolbert y Orlando Cabrera, y por supuesto Tomás Arrieta. Su recorrido se realiza en 1 hora. <br><br><br>• Zoológico de Cali: Es un parque que mantiene diversas especies animales para la contemplación del público en Cali. Operado por la Fundación Botánica y Zoológica de Cali, tiene una área de 10 000 m² y unas 109 especies nativas y foráneas. Cuenta con el tigre blanco, especie en vía de extinción y presidente del zoológico elegido por los niños. Su recorrido se realiza en 2 horas. <br><br><br>• Museo del Caribe: El Museo del Caribe, es el primer museo regional del país. Su tema central es el Caribe colombiano en sus dimensiones ambiental, histórico y sociocultural. El Museo ofrece un espacio para el fortalecimiento de la identidad y la reconstrucción de un imaginario de región. <br><br><br>• Castillo de Salgar: El castillo de San Antonio de Salgar es una edificación ubicada en el municipio de Puerto Colombia, al noroccidente del departamento del Atlántico, Colombia. La edificación se encuentra a veinte minutos de la ciudad de Cali, en dirección noroccidental y fue construida en 1848 sobre las ruinas del antiguo fortín de San Antonio, durante la época colonial. Se encuentra localizado sobre una pendiente vertical, al occidente de las playas de Salgar. Es un lugar de interés histórico, pues el castillo fue un fuerte español que sirvió como presidio, como colonia y más tarde como refugio. Su recorrido se realiza en 2-3 horas preferiblemente al atardecer.<br><br><br></div></div>');
+				$("#varText").show();
+				
+				break;
+			case("72 Horas en la Ciudad"):
+				$("#varText").html('<div class="row margen"> <div class="col-lg-11"><span class="titulox" style="text-align: center;">SI SOLO TIENE 72 HORAS PARA CONOCER ALGO REPRESENTATIVO DE LA PUERTA DE ORO DE COLOMBIA, DEBE IR A: </span></div><br><br><div class="col-lg-11" style="text-align: justify;">Ve más allá de sus playas, no te quedes con lo que te dicen, lánzate a conocer más de Cali, como donde se une el rio y el mar, disfrutando de una increíble vista, donde verás especies marinas que no creías.<br><br><br>• Santa Marta: a solo 104 kilómetros de Cali se encuentra la romántica ciudad de Santa Marta, la más antigua de Colombia, está bordeada de hermosas playas y de las imponentes montañas de la Sierra Nevada de Santa Marta. Antiguas ruinas se esconden en los exuberantes bosques de manglares del Parque Nacional de Tayrona, el lugar perfecto para una caminata durante el día. Haz snorkeling por los vibrantes arrecifes, luego dirígete a un café para disfrutar de una comida multicultural que integra los sabores de América Latina, el Caribe y Europa. Tenemos todas las facilidades para que la visites en 1 solo día con viajes ida y vuelta.</div></div>');
+				$("#varText").show();
+				
+				break;												
+  			case("Restaurantes"):
+				$("#varText").html('<div class="row margen"> <div class="col-lg-11"><span class="titulox" style="text-align: center;">La cocina colombiana es tan diversa como su clima y su cultura, y por eso sería imperdonable que no probaras los auténticos sabores de esta tierra. </span></div><br><br><div class="col-lg-11" style="text-align: justify;"><strong>Steak House Chez Ernest:</strong> Es sin duda el restaurante de mejor reputación de Cali y lo tiene bien merecido. Es un sitio en donde te atiende su dueño y eso cuenta muchísimo, además que sus carta, la cual no es extensa en opciones pero si lo es en calidad y presentación.Vale la pena ir y volver!<br><br><br><strong>Cocina 33:</strong> Una mezcla de sabores y texturas impresionantes. Una combinación de sabores de tierras lejanas con el nuestras raíces.<br><br><br><strong>Cucayo:</strong> Una mezcla de sabores y texturas impresionantes. Una combinación de sabores de tierras lejanas con el nuestras raíces.<br><br><br><strong>Restaurante donde Mama:</strong>Excelente sitio para un momento en familia y amigos, exquisita comida, atención impecable y muy chévere la decoración del sitio, ubicado en unos de los barrios de tradición de Cali como es El Prado</div></div>');
+				$("#varText").show();
+				
+				break;												
+  		}
+  		if(!$('#variableContent').is(':visible')){
+  			$("#variableContent").addClass('animated '+animation);
+  			$("#variableContent").show();	       
+            //wait for animation to finish before removing classes
+            window.setTimeout( function(){
+                $("#variableContent").removeClass('animated '+animation);
+            }, 1000);
+        }
+  	}
+
+</script>	
+<script src="js/dmd.js"></script>
+<script src="js/funciones.js"></script>
+<script type="text/javascript">
+	$.showLoading({name: 'circle-fade',allowHide: true}); 
+	$("#roomspan").html(localStorage.getItem("mem_room"));
+	setTimeout(autoIni, 300);
+	window.setInterval(function(){
+	tvhome();
+	}, 30000);
+</script>
+<script type="text/javascript">
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: "es",includedLanguages: "es,pt,fr,ja,en,hi"}, 'google_translate_element');
+}
+
+function traducir(lenguaje) {
+  var language = lenguaje;
+  localStorage.setItem("mem_lenguaje",language);
+  var selectField = document.querySelector("#google_translate_element select");
+  for(var i=0; i < selectField.children.length; i++){
+    var option = selectField.children[i];
+    if(option.value==language){
+       selectField.selectedIndex = i;
+       selectField.dispatchEvent(new Event('change'));
+       break;
+    }
+  }
+}
+
+</script>
+
+<script type="text/javascript">
+function autoTranslate(){
+	var langu = localStorage.getItem("mem_lenguaje");
+	if (langu != null){traducir(langu)};
+}
+
+setTimeout(autoTranslate,500);
+</script>
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>

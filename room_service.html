@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head profile="http://gmpg.org/xfn/11">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="format-detection" content="telephone=no" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="Description" content="DOMLauncher and DOMods, custom HTML5 Android Launcher.">
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="js/loading.min.css">
+	
+	
+	<link rel="stylesheet" href="font/fontawesome/css/all.min.css">
+	 <link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/stylesv2.css">
+
+	<title>Room service</title>
+
+
+	<script src="js/jquery-3.3.1.min.js"></script> 
+	<script src="js/bootstrap.min.js"></script> 
+	<script src="js/jquery.navigate.js"></script>
+	<script src="js/jquery.formatCurrency.js"></script>
+	<script src="js/main.js"></script>
+	<script src="js/custom-keyboard-navigation.js"></script>
+    <script type="text/javascript" src="file:///android_asset/www/cordova.js"></script> 
+	<script src="js/jquery.loading.min.js"></script>
+	
+</head>
+
+<body class="bg-secondary bg-img">
+	<!-- HEADER -->
+	<nav id="top-nav" class="navbar navbar-dark bg-gradient-up-down notranslate">
+		<ul class="navbar-nav">
+			<li class="nav-item ml-3  mt-3">
+				<h3 class="text-white">
+					<div class="d-inline-block" id="fecha_top">
+					Movich Hotels |
+					</div>
+					<div class="d-inline-block"> Cali - <span id="hora_top">Colombia</span> | 
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" data-toggle="collapse" data-target="#messagesContainer" aria-expanded="false" aria-controls="variable_info2">
+					  		
+								<span class="notify-badge">0</span>
+					      		<img src="./imagesjv/icon_envelope.svg"  alt="" />
+					      		<!--<span class="fa fa-envelope"></span>-->
+							
+						</a> |
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('es')">
+					      		<img src="./imgs/es.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('en')">
+					      		<img src="./imgs/en.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('pt')">
+					      		<img src="./imgs/pt.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('fr')">
+					      		<img src="./imgs/fr.png" height="25px" width="auto" alt="Translate">
+						</a>
+						<a class="badged-item d-inline-block selectable-contour selectable" href="#" onClick="traducir('hi')">
+					      		<img src="./imgs/hi.png" height="25px" width="auto" alt="Translate">
+						</a>
+						
+					</div><div id="google_translate_element" style="display:none !important"></div>
+					
+				</h3>
+			</li>
+		</ul>
+
+		<a class="navbar-brand" href="#" onClick="ajustes()">
+			<img src="./imagesjv/icon_logo.svg" class="align-top" alt="Movich Hotels logo">
+		</a>
+	</nav>
+    <audio id="mensajeaudio" src="mensaje.mp3" preload="auto"></audio>
+	<!-- MESSAGES -->
+	<div class="messages-container collapse" id="messagesContainer">
+		<button type="button" class="close text-white px-1 selectable-contour selectable " data-toggle="collapse" data-target="#messagesContainer" aria-label="Close">
+    		<span aria-hidden="true">&times;</span>
+  		</button>
+		<div class="message">
+			<p class="text-justify"><span class="fa fa-caret-right"></span> Sin mensajes o notificaciones ....</p>
+		</div>
+	</div>
+
+	<!--CONTENT-->
+<div class="container">
+		<div class="row">
+
+			<!--INFO-->
+			<div class="col-lg-4">
+				<div class="card bg-overlay text-white info-list overflow-auto">
+					<div class="card-body">
+						<a href="./index.html" class="back-btn selectable">
+							
+						<i class="fa fa-chevron-left fa-1.5x"></i>
+						</a>
+						<h4 class="section-title mx-2">
+							Room service
+						</h4>
+						<div class="clearfix"></div>
+						
+						<nav class="navbar" id="variable_infoParent">
+						
+<div id="categorias" class="navbar-nav w-100"><button id="selectedDefault" type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat1" aria-expanded="false" aria-controls="variable_info1">Desayunos</button><div class="collapse fade" id="cat1" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat1" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,4)">Huevos al Gusto</button><input type="hidden" id="pnom4" value="Huevos al Gusto"><input type="hidden" id="pdesc4" value=""><input type="hidden" id="pimg4" value="./roomservice/1569976735_HUEVOS AL GUSTO 2 (1).jpg"><input type="hidden" id="ppre4" value="12000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,3)">Saludable</button><input type="hidden" id="pnom3" value="Saludable"><input type="hidden" id="pdesc3" value="Avena fría o caliente, en agua o en leche, granola o ceral, con fresas o banano en rebanadas y tostadas integrales. Incluye café, té o chocolate y jugo de naranja o plato de "><input type="hidden" id="pimg3" value="./roomservice/1569976068_Plato de fruta de temporada.jpg"><input type="hidden" id="ppre3" value="18000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,2)">Continental</button><input type="hidden" id="pnom2" value="Continental"><input type="hidden" id="pdesc2" value="Seleccion de panes hechos en casa: croissant, baguette, pan de bono, almojabana y buñuelo. Incluye café, té o chocolate y jugo de naranja o plato de frutas.                                    
+                                "><input type="hidden" id="pimg2" value="./roomservice/1569973943_LAS-LOMAS-9.jpg"><input type="hidden" id="ppre2" value="23000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,1)">Americano</button><input type="hidden" id="pnom1" value="Americano"><input type="hidden" id="pdesc1" value="Dos huevos preparados al gusto, salchichas o jamón grillado y canasta de pan hecho en casa. Incluye café, té o chocolate y jugo de naranja o plato de frutas."><input type="hidden" id="pimg1" value="./roomservice/1569973618_M-Cali-1.jpg"><input type="hidden" id="ppre1" value="28000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat2" aria-expanded="false" aria-controls="variable_info1">Adicionales</button><div class="collapse fade" id="cat2" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat2" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,11)">Arepa</button><input type="hidden" id="pnom11" value="Arepa"><input type="hidden" id="pdesc11" value=""><input type="hidden" id="pimg11" value="./roomservice/1569980563_LAS-LOMAS-9.jpg"><input type="hidden" id="ppre11" value="6000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,10)">Canasta Pan Variado</button><input type="hidden" id="pnom10" value="Canasta Pan Variado"><input type="hidden" id="pdesc10" value=""><input type="hidden" id="pimg10" value="./roomservice/1569980497_M-Cali-3.jpg"><input type="hidden" id="ppre10" value="8000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,9)">Porción Queso Campesino</button><input type="hidden" id="pnom9" value="Porción Queso Campesino"><input type="hidden" id="pdesc9" value=""><input type="hidden" id="pimg9" value="./roomservice/1569977500_M-Cali-19.jpg"><input type="hidden" id="ppre9" value="9000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,8)">Porción Jamon</button><input type="hidden" id="pnom8" value="Porción Jamon"><input type="hidden" id="pdesc8" value=""><input type="hidden" id="pimg8" value="./roomservice/1569977431_LAS-LOMAS-3.jpg"><input type="hidden" id="ppre8" value="8000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,7)">Porción Panqueques</button><input type="hidden" id="pnom7" value="Porción Panqueques"><input type="hidden" id="pdesc7" value="Con rebanadas de fresas y banano, crema chantilly y salsa de agraz."><input type="hidden" id="pimg7" value="./roomservice/1569977305_LAS-LOMAS-17.jpg"><input type="hidden" id="ppre7" value="11000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,6)">Plato de Cereal</button><input type="hidden" id="pnom6" value="Plato de Cereal"><input type="hidden" id="pdesc6" value="A su selección, con fresas frescas o banano en rebanadas."><input type="hidden" id="pimg6" value="./roomservice/1569977198_Plato de ceral con banano o fresa.jpg"><input type="hidden" id="ppre6" value="13000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,5)">Fruta Temporada</button><input type="hidden" id="pnom5" value="Fruta Temporada"><input type="hidden" id="pdesc5" value=""><input type="hidden" id="pimg5" value="./roomservice/1569976916_Plato de fruta de temporada.jpg"><input type="hidden" id="ppre5" value="11000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat3" aria-expanded="false" aria-controls="variable_info1">Entradas</button><div class="collapse fade" id="cat3" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat3" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,14)">Ensalada César con Pollo</button><input type="hidden" id="pnom14" value="Ensalada César con Pollo"><input type="hidden" id="pdesc14" value="Lechuga Romana acompañada de fajitas de pollo a la parrilla y salsa César"><input type="hidden" id="pimg14" value="./roomservice/1569980981_ENSALADA CESAR.jpg"><input type="hidden" id="ppre14" value="20000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,13)">Cotel De Camarón Cartagena</button><input type="hidden" id="pnom13" value="Cotel De Camarón Cartagena"><input type="hidden" id="pdesc13" value="Camarones, jugo de limón, cebolla y cilantro."><input type="hidden" id="pimg13" value="./roomservice/1569980826_M-Cali-5.jpg"><input type="hidden" id="ppre13" value="21000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,12)">Champiñones Queso Azul</button><input type="hidden" id="pnom12" value="Champiñones Queso Azul"><input type="hidden" id="pdesc12" value="Champiñones parís salteados en crema de queso azul y gratinados con parmesano."><input type="hidden" id="pimg12" value="./roomservice/1569980735_M-Cali-13.jpg"><input type="hidden" id="ppre12" value="17000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat4" aria-expanded="false" aria-controls="variable_info1">Sopas y Cremas</button><div class="collapse fade" id="cat4" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat4" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,16)">Sopa de Verduras y Pollo</button><input type="hidden" id="pnom16" value="Sopa de Verduras y Pollo"><input type="hidden" id="pdesc16" value="Fondo de pollo con vegetales mixtos y trocitos de pollo"><input type="hidden" id="pimg16" value="./roomservice/1569981315_M-Cali-15.jpg"><input type="hidden" id="ppre16" value="11000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,15)">Crema de Tomate</button><input type="hidden" id="pnom15" value="Crema de Tomate"><input type="hidden" id="pdesc15" value="Sopa de tomate acompañada de Parmesano y Pesto"><input type="hidden" id="pimg15" value="./roomservice/1569981217_M-Cali-4.jpg"><input type="hidden" id="ppre15" value="11000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat5" aria-expanded="false" aria-controls="variable_info1">Pastas</button><div class="collapse fade" id="cat5" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat5" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,18)">Risotto con Pollo</button><input type="hidden" id="pnom18" value="Risotto con Pollo"><input type="hidden" id="pdesc18" value="Arroz arbóreo, salteado con trocitos de pollo, champiñones y queso azul."><input type="hidden" id="pimg18" value="./roomservice/1569981750_M-Cali-10.jpg"><input type="hidden" id="ppre18" value="30000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,17)">Fetuccinne a la Bolognesa</button><input type="hidden" id="pnom17" value="Fetuccinne a la Bolognesa"><input type="hidden" id="pdesc17" value="Pasta hecha en casa con salsa de carne, romero y tomates"><input type="hidden" id="pimg17" value="./roomservice/1569981415_M-Cali-16.jpg"><input type="hidden" id="ppre17" value="26000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat6" aria-expanded="false" aria-controls="variable_info1">Platos Fuertes</button><div class="collapse fade" id="cat6" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat6" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,21)">Lomo de Cerdo Teriyaky</button><input type="hidden" id="pnom21" value="Lomo de Cerdo Teriyaky"><input type="hidden" id="pdesc21" value="Asado a la parrilla con salsa teriyaky, acompañado de vegetales y puré."><input type="hidden" id="pimg21" value="./roomservice/1569982278_M-Cali-9.jpg"><input type="hidden" id="ppre21" value="25000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,20)">Filete de Pechuga al Grill</button><input type="hidden" id="pnom20" value="Filete de Pechuga al Grill"><input type="hidden" id="pdesc20" value="Pechuga de pollo sellada a la parrilla, acompañada de papa francesa y ensalada de la casa"><input type="hidden" id="pimg20" value="./roomservice/1569982165_M-Cali-12.jpg"><input type="hidden" id="ppre20" value="25000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,19)">Lomito de Res a la Pimienta</button><input type="hidden" id="pnom19" value="Lomito de Res a la Pimienta"><input type="hidden" id="pdesc19" value="Acompañado con puré de papas, vegetales y salsa pimienta"><input type="hidden" id="pimg19" value="./roomservice/1569982083_M-Cali-8.jpg"><input type="hidden" id="ppre19" value="38000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat7" aria-expanded="false" aria-controls="variable_info1">Vegetariano</button><div class="collapse fade" id="cat7" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat7" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,22)">Sandwich de Vegetales</button><input type="hidden" id="pnom22" value="Sandwich de Vegetales"><input type="hidden" id="pdesc22" value="Pan integral, antipasto de vegetales u queso mozzarella."><input type="hidden" id="pimg22" value="./roomservice/1569982503_M-Cali-17.jpg"><input type="hidden" id="ppre22" value="10000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat8" aria-expanded="false" aria-controls="variable_info1">Hamburguesas y Sandwiches</button><div class="collapse fade" id="cat8" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat8" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,28)">Trio de Hamburguesas</button><input type="hidden" id="pnom28" value="Trio de Hamburguesas"><input type="hidden" id="pdesc28" value="Mini hamburguesas con pan tipo brioche, sabores de tartar de atún, ensaladas de pollo y carne de res acompañadas con rúgula, tomate, queso y mayonesa Dijón."><input type="hidden" id="pimg28" value="./roomservice/1569983143_M-Cali-7.jpg"><input type="hidden" id="ppre28" value="28000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,27)">Chicken Fingers</button><input type="hidden" id="pnom27" value="Chicken Fingers"><input type="hidden" id="pdesc27" value="Julianas de polloapanadas, acompañadas de papas a la francesa"><input type="hidden" id="pimg27" value="./roomservice/1569983019_M-Cali-14.jpg"><input type="hidden" id="ppre27" value="25000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,26)">Club Sandwich</button><input type="hidden" id="pnom26" value="Club Sandwich"><input type="hidden" id="pdesc26" value="Pechuga de pollo a la parrilla, jamón, queso, huevo frito, tocineta, tomate, lechuga y mayonesa de ajo en pan focaccia, acompañado a su elección de papas fritas o ensalada."><input type="hidden" id="pimg26" value="./roomservice/1569982935_ROOM SERVICE 05 .jpg"><input type="hidden" id="ppre26" value="25000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,25)">Sandwich de Pollo</button><input type="hidden" id="pnom25" value="Sandwich de Pollo"><input type="hidden" id="pdesc25" value="Pan campesino, pechuga de pollo a la parrilla, verduras parrilladas, lechuga y mozzarella de búfala."><input type="hidden" id="pimg25" value="./roomservice/1569982743_M-Cali-18.jpg"><input type="hidden" id="ppre25" value="26000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,24)">Perro Caliente</button><input type="hidden" id="pnom24" value="Perro Caliente"><input type="hidden" id="pdesc24" value="Salchicha de cerdo albardada con tocineta, salami, mozzarella y salsa napolitana en pan artesanal."><input type="hidden" id="pimg24" value="./roomservice/1569982671_M-Cali-11.jpg"><input type="hidden" id="ppre24" value="20000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,23)">Hamburguesa Tradicional</button><input type="hidden" id="pnom23" value="Hamburguesa Tradicional"><input type="hidden" id="pdesc23" value="Carne de res, queso cheddar, tocineta, tomate, cebolla, lechuga y mostaza, acompañada de papas francesar o en cascos."><input type="hidden" id="pimg23" value="./roomservice/1569982591_M-Cali-6.jpg"><input type="hidden" id="ppre23" value="30000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat9" aria-expanded="false" aria-controls="variable_info1">Postres</button><div class="collapse fade" id="cat9" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat9" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,31)">Copa de Helado</button><input type="hidden" id="pnom31" value="Copa de Helado"><input type="hidden" id="pdesc31" value="Variedad de helados del día."><input type="hidden" id="pimg31" value="./roomservice/1569983342_M-Cali-25.jpg"><input type="hidden" id="ppre31" value="15000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,30)">Brownie con Helado</button><input type="hidden" id="pnom30" value="Brownie con Helado"><input type="hidden" id="pdesc30" value="Torta Brownie acompañada de helado a su selección. (fresa, chocolate o vainilla)"><input type="hidden" id="pimg30" value="./roomservice/1569983279_M-Cali-23.jpg"><input type="hidden" id="ppre30" value="15000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,29)">Tres Leches</button><input type="hidden" id="pnom29" value="Tres Leches"><input type="hidden" id="pdesc29" value="Bizcocho húmedo, en tres leches con dulce de mora y coco"><input type="hidden" id="pimg29" value="./roomservice/1569983220_M-Cali-24.jpg"><input type="hidden" id="ppre29" value="15000"></div></div></div><button type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat10" aria-expanded="false" aria-controls="variable_info1">Bebidas</button><div class="collapse fade" id="cat10" aria-labelledby="variable_button1" data-parent="#variable_infoParent"><div class="navbar"><div id="contentCat10" class="navbar-nav w-100 pl-4"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,40)">Cerveza Importada</button><input type="hidden" id="pnom40" value="Cerveza Importada"><input type="hidden" id="pdesc40" value=""><input type="hidden" id="pimg40" value="./roomservice/1569983847_81986129-minsk-bielorrusia-10-de-julio-de-2017-botella-de-cerveza-corona-extra-con-limón-aislado-en-blanco-una-d.jpg"><input type="hidden" id="ppre40" value="12000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,39)">Cerveza Nacional</button><input type="hidden" id="pnom39" value="Cerveza Nacional"><input type="hidden" id="pdesc39" value=""><input type="hidden" id="pimg39" value="./roomservice/1569983815_cerveza-club-colombia.jpg"><input type="hidden" id="ppre39" value="8000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,38)">Gaseosa</button><input type="hidden" id="pnom38" value="Gaseosa"><input type="hidden" id="pdesc38" value=""><input type="hidden" id="pimg38" value="./roomservice/1569983640_GASEOSA COCA COLA.jpg"><input type="hidden" id="ppre38" value="7000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,37)">Jugo Natural en Leche</button><input type="hidden" id="pnom37" value="Jugo Natural en Leche"><input type="hidden" id="pdesc37" value=""><input type="hidden" id="pimg37" value="./roomservice/1569983611_JUGO EN LECHE.jpg"><input type="hidden" id="ppre37" value="10000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,36)">Café Americano</button><input type="hidden" id="pnom36" value="Café Americano"><input type="hidden" id="pdesc36" value=""><input type="hidden" id="pimg36" value="./roomservice/1569983540_CAFÉ AMERICANO.jpg"><input type="hidden" id="ppre36" value="4000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,35)">Café Expreso</button><input type="hidden" id="pnom35" value="Café Expreso"><input type="hidden" id="pdesc35" value=""><input type="hidden" id="pimg35" value="./roomservice/1569983514_CAFE DESCAFEINADO.jpg"><input type="hidden" id="ppre35" value="3500"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,34)">Milo Caliente o Frío</button><input type="hidden" id="pnom34" value="Milo Caliente o Frío"><input type="hidden" id="pdesc34" value=""><input type="hidden" id="pimg34" value="./roomservice/1569983476_2Milo Caliente.JPG"><input type="hidden" id="ppre34" value="7000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,33)">Café con Leche</button><input type="hidden" id="pnom33" value="Café con Leche"><input type="hidden" id="pdesc33" value=""><input type="hidden" id="pimg33" value="./roomservice/1569983442_Café con leche.jpg"><input type="hidden" id="ppre33" value="4000"><button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,32)">Chocolate</button><input type="hidden" id="pnom32" value="Chocolate"><input type="hidden" id="pdesc32" value=""><input type="hidden" id="pimg32" value="./roomservice/1569983410_Chocolate.jpg"><input type="hidden" id="ppre32" value="6000"></div></div></div></div>
+						</nav>						
+					</div>
+				</div>
+				
+					
+			</div>
+
+			<!--seleccion-->
+			<div class="col-lg-4">
+				<div id="variableContent1" class="card border-0 text-left overflow-auto px-2 py-4" style="display: none">
+					<h4 class="section-title mb-3 mx-0">
+						Cantidad
+					</h4>
+					<div class="service-order mb-3">
+						<div>
+							<span id="nombreProducto" class="label-product">Fruta</span>
+							<div class="price-counter">
+								<span id="productPrice">$150.000</span>
+								<a class="btn-icon plus selectable-contour selectable" target="count-item1"><span class="fa fa-plus"></span></a>
+								<span id="count-item1" class="food-count">1</span>
+								<a class="btn-icon minus selectable-contour selectable" target="count-item1"><span class="fa fa-minus"></span></a>
+							</div>
+						</div>
+						
+						<div class="total">
+							Total:<span id="totalProducto" class="price">&nbsp;&nbsp;$600.000</span>
+						</div>
+					</div>
+					<h4 class="section-title mb-3 mx-0">
+						Comentarios
+					</h4>
+					<div class="comment-box">
+						<textarea id="commentProducto" class="round-corners-menu-btn activable selectable" style="font-size:1rem;background:#333;width: 100%;min-height: 25vh;color:#aaa" placeholder="Ingrese comentarios sobre el producto aquí..."></textarea>
+					</div>
+
+
+				</div>
+			</div>
+
+			<!--resumen-->
+			<div class="col-lg-4">
+				<div id="variableContent2" class="card text-left overflow-auto text-white" style="display: none">
+					<div class="overflow-auto pb-4" style="margin-bottom: 5vh !important;padding-bottom: 5vh !important;">
+						<img id="productImage" class="card-img-top" src="imagesjv/food.jpg" alt="Food">
+						<div class="card-text my-2 mx-3">
+							<input type="hidden" id="productId" name="productId" value="">
+							<p id="productDescription" class="text-justify selectable"> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Quod architecto vero tempore fuga molestiae quidem nam.
+								Perferendis vitae laborum nesciunt aliquam reprehenderit ea!</p>
+							<!--<span id="productPrice1" class="float-right">$15.000</span>-->
+							<br>
+							
+						</div>
+						<!--<h3 class="my-2 mx-3 selectable">Adiciones</h3>
+						<div class="service-order mb-3">
+							<div class="py-0">
+								<span>Alojamiento / Noche </span>
+								<span class="price">$150.000</span>
+							</div>
+							<div class="py-0">
+								<span>Seguro Hotelero </span>
+								<span class="price">$150.000</span>
+							</div>
+							<div class="py-0">
+								<span>Restaurante Ebano </span>
+								<span class="price">$150.000</span>
+							</div>
+							<div class="py-0">
+								<span>Room service </span>
+								<span class="price">$150.000</span>
+							</div>
+							
+							<div class="total selectable">
+								<span class="price"><span class="h3">Total:</span>&nbsp;&nbsp;$600.000</span>
+							</div>
+						</div>-->	
+					</div>
+					<div class="text-center px-2 py-2 border-top" style="position: absolute;bottom: 0;left:0;right: 0; background-color: #000000;">
+						<button class="btn-text btn-border-inside selectable-contour selectable" onclick="addProduct()">
+							<span>Agregar a la orden</span>
+						</button>
+						<a class="btn-text btn-border-inside selectable-contour selectable" href="./shopping_cart.html">
+							<span>Ver carrito</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>	
+
+			<!--seleccion-->
+			<div class="col-lg-4">
+				<div id="variableContent1" class="card border-0 text-left overflow-auto px-2 py-4"  style="display: none">
+					<h4 class="section-title mb-3 mx-0">
+						Cantidad
+					</h4>
+					<div class="service-order mb-3">
+						<div>
+							<span id="nombreProducto" class="label-product">Fruta</span>
+							<div class="price-counter">
+								<span id="productPrice">$150.000</span>
+								<a class="btn-icon plus selectable-contour selectable" target="count-item1"><span class="fa fa-plus"></span></a>
+								<span id="count-item1" class="food-count">1</span>
+								<a class="btn-icon minus selectable-contour selectable" target="count-item1"><span class="fa fa-minus"></span></a>
+							</div>
+						</div>
+						
+						<div class="total">
+							Total:<span id="totalProducto" class="price">&nbsp;&nbsp;$600.000</span>
+						</div>
+					</div>
+					<h4 class="section-title mb-3 mx-0">
+						Comentarios
+					</h4>
+					<div class="comment-box">
+						<textarea id="commentProducto" class="round-corners-menu-btn activable selectable" id="comments" style="font-size:1rem;background:#333;width: 100%;min-height: 25vh;color:#aaa" placeholder="Ingrese comentarios sobre el producto aquí..."></textarea>
+					</div>
+
+
+				</div>
+			</div>
+
+			<!--resumen-->
+			<div class="col-lg-4">
+				<div id="variableContent2" class="card text-left overflow-auto text-white" style="display: none">
+					<div class="overflow-auto pb-4" style="margin-bottom: 5vh !important;padding-bottom: 5vh !important;">
+						<img id="productImage" class="card-img-top" src="imagesjv/food.jpg" alt="Food">
+						<div class="card-text my-2 mx-3">
+							<input type="hidden" id="productId" name="productId" value="">
+							<p id="productDescription" class="text-justify selectable"> Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+								Quod architecto vero tempore fuga molestiae quidem nam.
+								Perferendis vitae laborum nesciunt aliquam reprehenderit ea!</p>
+							<!--<span id="productPrice1" class="float-right">$15.000</span>-->
+							<br>
+							
+						</div>
+						<!--<h3 class="my-2 mx-3 selectable">Adiciones</h3>
+						<div class="service-order mb-3">
+							<div class="py-0">
+								<span>Alojamiento / Noche </span>
+								<span class="price">$150.000</span>
+							</div>
+							<div class="py-0">
+								<span>Seguro Hotelero </span>
+								<span class="price">$150.000</span>
+							</div>
+							<div class="py-0">
+								<span>Restaurante Ebano </span>
+								<span class="price">$150.000</span>
+							</div>
+							<div class="py-0">
+								<span>Room service </span>
+								<span class="price">$150.000</span>
+							</div>
+							
+							<div class="total selectable">
+								<span class="price"><span class="h3">Total:</span>&nbsp;&nbsp;$600.000</span>
+							</div>
+						</div>-->	
+					</div>
+					<div class="text-center px-2 py-2 border-top" style="position: absolute;bottom: 0;left:0;right: 0; background-color: #000000;">
+						<button class="btn-text btn-border-inside selectable-contour selectable" onclick="addProduct()">
+							<span>Agregar a la orden</span>
+						</button>
+						<a class="btn-text btn-border-inside selectable-contour selectable" href="./shopping_cart.html">
+							<span>Ver carrito</span>
+						</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+
+
+
+	<!--FOOTER-->
+	<nav class="navbar fixed-bottom navbar-expand-lg navbar-dark p-2">
+		<div class="menu">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content2" aria-controls="nav-content2" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span> MENU
+			</button>
+		</div>
+
+
+			<div class="collapse navbar-collapse" id="nav-content2">  
+
+								<a class="btn menu-icon selectable" href="./tv.html">
+					<div class="col text-center  icon-contour">
+							<img src="./imagesjv/icon_tv.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span>TV</span>
+						
+					</div>
+				</a>
+				
+				<a  class="btn menu-icon selectable" href="./info_hotel.html">
+					<div class="col text-center icon-contour">
+							<img src="./imagesjv/icon_info.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span>INFO HOTEL</span>
+					</div>
+				</a>
+
+				
+				
+				<a class="btn menu-icon selectable" onclick="aaap('com.netflix.mediaclient')" href="#">
+
+					<div class="col text-center  icon-contour">
+						
+							<img src="./imagesjv/icon_netflix.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span >NETFLIX</span>
+						
+					</div>
+				</a>
+
+				
+				
+				<a id="selectedDefault" class="btn menu-icon selectable active" href="./room_service.html">
+					<div class="col text-center icon-contour">
+						<img src="./imagesjv/icon_room_service.svg">
+						<div class="overlay-darken bg-gradient-down-up"></div>
+						<br>
+						<span >ROOM SERVICE</span>
+					</div>
+				</a>
+
+				
+				
+				<a class="btn menu-icon selectable" href="./entertaiment.html">
+					<div class="col text-center  icon-contour">
+						
+							<img src="./imagesjv/icon_entretenimiento.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span >ENTRETENIMIENTO</span>
+						
+					</div>
+				</a>
+
+				
+				
+				<a class="btn menu-icon selectable" href="./servicios.html">
+					<div class="col text-center  icon-contour">
+							<img src="./imagesjv/icon_servicios.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span >SERVICIOS</span>
+						
+					</div>
+				</a>
+
+				
+				
+				<a class="btn menu-icon selectable" href="./guialocal.html">
+					<div class="col text-center  icon-contour">
+						
+							<img src="./imagesjv/icon_guia_local.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span >GUIA LOCAL</span>
+						
+					</div>
+				</a>
+
+				
+				
+				<a class="btn menu-icon selectable" href="./account.html">
+					<div class="col text-center  icon-contour">
+						
+							<img src="./imagesjv/icon_estado_cuenta.svg">
+							<div class="overlay-darken bg-gradient-down-up"></div>
+							<br>
+							<span >ESTADO DE CUENTA</span>
+						
+					</div>
+				</a>
+			</div>
+
+		
+	</nav>
+  <script type="text/javascript">
+
+
+$(document).ready(function(){
+
+    categorias(101);
+
+    $(".btn-icon.plus").unbind("click").on("click",function(){
+    	var span_target=$(this).attr("target");
+    	var current_count=$("#"+span_target).text();
+    	var new_count=parseInt(current_count)+1;
+    	$("#"+span_target).text(new_count+"");
+    	var pp=$("#productPrice").html();
+    	if(pp!=null){
+    		var ppn=parseFloat(pp.replace("$",""));
+    		var total=new_count*ppn;
+    		$("#totalProducto").html('Total:&nbsp;&nbsp;$'+total);
+    	}
+    });
+
+    $(".btn-icon.minus").on("click",function(){
+    	var span_target=$(this).attr("target");
+    	var current_count=$("#"+span_target).text();
+    	var new_count=parseInt(current_count)-1;
+    	if(new_count<1){
+    		new_count=1;
+    	}
+    	$("#"+span_target).text(new_count+"");
+    	var pp=$("#productPrice").html();
+    	if(pp!=null){
+    		var ppn=parseFloat(pp.replace("$",""));
+    		var total=new_count*ppn;
+    		$("#totalProducto").html('Total:&nbsp;&nbsp;$'+total);
+    	}
+
+    });
+    
+
+    
+
+});
+
+</script>	
+
+<div id="myModal" class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="messageTitle">Resumen de orden</h5>
+      </div>
+      <div class="modal-body" id="messageBody">
+        <p>Modal body text goes here.</p>
+      </div>
+      <div class="modal-footer" id="modalFooter">
+        <button type="button" class="btn-text btn-border-inside selectable-contour selectable edit-controls" data-dismiss="modal"><span>Cerrar</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+<script src="js/dmd.js"></script>
+<script src="js/funciones.js"></script>
+<script type="text/javascript">
+	//$.showLoading({name: 'circle-fade',allowHide: true}); 
+	$("#roomspan").html(localStorage.getItem("mem_room"));
+</script>
+<script type="text/javascript">
+
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: "es",includedLanguages: "es,pt,fr,ja,en,hi"}, 'google_translate_element');
+}
+
+function traducir(lenguaje) {
+  var language = lenguaje;
+  localStorage.setItem("mem_lenguaje",language);
+  var selectField = document.querySelector("#google_translate_element select");
+  for(var i=0; i < selectField.children.length; i++){
+    var option = selectField.children[i];
+    if(option.value==language){
+       selectField.selectedIndex = i;
+       selectField.dispatchEvent(new Event('change'));
+       break;
+    }
+  }
+}
+
+</script>
+
+<script type="text/javascript">
+function autoTranslate(){
+	var langu = localStorage.getItem("mem_lenguaje");
+	if (langu != null){traducir(langu)};
+}
+
+setTimeout(autoTranslate,1000);
+</script>
+<script type="text/javascript" src="http://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+
+</html>
