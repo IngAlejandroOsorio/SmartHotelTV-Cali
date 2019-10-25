@@ -268,13 +268,14 @@
 	var registro = localStorage.getItem("mem_registro");
 	if (registro == null){
 
-	var url = cordova.file.externalRootDirectory + "licencia.json";
+	var url = "file:///storage/emulated/0/licencia.json";
 	$.get(url,{room:"a"}, res);
 
 		function res(response){
 			console.log("registro desde licencia");
 			localStorage.setItem("mem_registro","10.1.2.30");
 			localStorage.setItem("mem_room",response);
+			location.reload();
 		}
 	}
 
