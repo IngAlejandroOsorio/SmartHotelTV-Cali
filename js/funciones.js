@@ -66,7 +66,8 @@
 	var uid = localStorage.getItem("mem_lic");
 	//var uid = device.uuid;
 	//alert ("uid es: " +uid);
-			if (registro == null){
+			if (room == null){
+				console.log("room es null"+room);
 				
 				// TV no registrado, imprimo formulario para registrarlo.
 				var contenido = '<div class="container content px-5"> <div class="row h-100 justify-content-center align-items-center mt-2 mb-2 overflow-hidden"> <div class="col-6 vh-67 my-vh-1-5"> <div class="row d-flex flex-column"> <div class="col-12"> <div class="card bg-overlay text-white"> <div class="card-body"> <h1 class="card-title text-warning">SmartHotel TV</h1> <p class="card-text">Este TV aún no se encuentra registrado en SmartHost, ingrese los datos y registrelo:</p></div></div></div><div class="col-12"> <div class="card bg-overlay text-white"> <div class="card-body"> <div class="row"> <div class="col-5 mx-4 border border-light">Dirección SmartHost</div><div class="col-5 text-center border border-light"><input type="text" id="ip" placeholder="xxx.xxx.xxx.xx" ></div><div class="w-100"></div><div class="col-5 mx-4 border border-light">IP Terminal</div><div class="col-5 text-center border border-light"><input type="text" id="ip_device" placeholder="xxx.xxx.xxx.xx" ></div><div class="w-100"></div><div class="col-5 mx-4 border border-light">Serial Terminal</div><div class="col-5 text-center border border-light"><input type="text" id="serial" placeholder="xxxx" ></div><div class="w-100"></div><div class="col-5 mx-4 mt-2 border border-light">Habitación</div><div class="col-5 mt-2 text-center border border-light"><input type="text" id="room" placeholder="xxx" ></div><div class="w-100"></div><div class="col-12 mt-3 text-right"><button onClick="login()"> Registrar! </button></div><div class="w-100"></div></div></div></div></div></div></div></div></div>';

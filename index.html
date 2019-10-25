@@ -263,15 +263,33 @@
 
 		
 	</nav>
+	<script>
+	
+	var registro = localStorage.getItem("mem_registro");
+	if (registro == null){
+
+	var url = cordova.file.externalRootDirectory + "licencia.json";
+	$.get(url,{room:"a"}, res);
+
+		function res(response){
+			console.log("registro desde licencia");
+			localStorage.setItem("mem_registro","10.1.2.30");
+			localStorage.setItem("mem_room",response);
+		}
+	}
+
+
+	</script>
 <script  src="js/dmd.js"></script>
 <script  src="js/funciones.js"></script>
 <script type="text/javascript">
 	$.showLoading({name: 'circle-fade',allowHide: true});
 	$("#roomspan").html(localStorage.getItem("mem_room"));
+	//setTimeout(function(){console.log("esto es room antes de func:"+localStorage.getItem["mem_room"])}, 1000);
 	setTimeout(autoIni, 1000);
 	window.setInterval(function(){
 	tvhome();
-	}, 10000);
+	}, 20000);
 	
 	function goRoom(){
 	localStorage.setItem('productos',"[]");

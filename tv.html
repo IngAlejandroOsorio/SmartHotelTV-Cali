@@ -111,34 +111,51 @@
 								<button id="selectedDefault" type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
 									Guía de Uso
 								</button>
+
+								<button id="selectedDefault" type="button" class="round-corners-menu-btn selectable activable" data-toggle="collapse" data-target="#cat1" aria-expanded="fase" aria-controls="variable_info1">
+									Canales HD
+								</button>
+
+								<div class="fade collapse" id="cat1" aria-labelledby="variable_button1" data-parent="#variable_infoParent" style="">
+									<div class="navbar">
+										<div id="contentCat1" class="navbar-nav w-100 pl-4">
+											<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">Colombiano HD</button>
+											<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">Noticias HD</button>
+											<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">Deportes HD</button>
+											<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">Variedades HD</button>
+											<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">Musical HD</button>
+										</div>
+									</div>
+								</div>
+
 								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
-									Nacionales
+									Colombiano
 								</button>
 								<!--ITEM 2-->
 								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
-									Musicales
+									Cine
 								</button>
 								<!--ITEM 3 -->
 								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
-									Infantiles
-								</button>
-                                <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
-									Culturales
-								</button>
-                                <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
 									Variedades
 								</button>
                                 <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
-									Internacional
+									Informativos
 								</button>
-								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
-									Noticias
-								</button>
-								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+                                <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
 									Deportes
+								</button>
+                                <button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									Musical
+								</button>
+								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									Infantil
 								</button>
 								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
 									Series
+								</button>
+								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
+									Documentales
 								</button>
 								<button type="button" class="round-corners-menu-btn selectable activable" onclick="loadContent(this)">
 									Peliculas
@@ -284,53 +301,69 @@
   		var btnName=$(btn)[0].innerText;
   		//$("#varTitle").html(btnName);
   		switch(btnName){
-  			case("Instrucciones"):
+  			case("Guia de Uso"):
   				$("#varImage").attr("src","imgs/manualcontrol.png");
 				break;
-			case("Nacionales"):
+			case("Colombiano"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
   				$("#varImage").attr("src","imagesjv/Diapositiva1.JPG");
 				break;
-  			case("Musicales"):
+  			case("Cine"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
 				$("#varImage").attr("src","imagesjv/Diapositiva2.JPG")
 				break;
-  			case("Infantiles"):
+  			case("Variedades"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
 				$("#varImage").attr("src","imagesjv/Diapositiva3.JPG") //y 4
 				break;
-  			case("Culturales"):
+  			case("Informativos"):
+			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
+				$("#varImage").attr("src","imagesjv/Diapositiva4.JPG")
+				break;	
+  			case("Deportes"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
 				$("#varImage").attr("src","imagesjv/Diapositiva5.JPG")
-				break;	
-  			case("Variedades"):
+				break;
+  			case("Musical"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
 				$("#varImage").attr("src","imagesjv/Diapositiva6.JPG")
 				break;
-  			case("Internacional"):
+			case("Infantil"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
 				$("#varImage").attr("src","imagesjv/Diapositiva7.JPG")
-				break;
-			case("Noticias"):
-			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
-				$("#varImage").attr("src","imagesjv/Diapositiva8.JPG")
 				break;	
-			case("Deportes"):
-			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
-				$("#varImage").attr("src","imagesjv/Diapositiva9.JPG") //y 10
-				break;
 			case("Series"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
-				$("#varImage").attr("src","imagesjv/Diapositiva10.JPG")
+				$("#varImage").attr("src","imagesjv/Diapositiva8.JPG") //y 10
 				break;
-			case("Peliculas"):
+			case("Documentales"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
-				$("#varImage").attr("src","imagesjv/Diapositiva11.JPG")
+				$("#varImage").attr("src","imagesjv/Diapositiva9.JPG")
 				break;
 			case("Religiosos"):
 			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
+				$("#varImage").attr("src","imagesjv/Diapositiva10.JPG")
+				break;
+			case("Colombiano HD"):
+			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
+				$("#varImage").attr("src","imagesjv/Diapositiva11.JPG")
+				break;
+			case("Noticias HD"):
+			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
 				$("#varImage").attr("src","imagesjv/Diapositiva12.JPG")
-				break;			
+				break;	
+			case("Deportes HD"):
+			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
+				$("#varImage").attr("src","imagesjv/Diapositiva13.JPG")
+				break;	
+			case("Variedades HD"):
+			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
+				$("#varImage").attr("src","imagesjv/Diapositiva14.JPG")
+				break;
+			case("Musical HD"):
+			if (noti > 0) {}else{noti = noti + 1;alert('Presione go-TV en su control remoto y coloque el número para ver este canal de TV')}
+				$("#varImage").attr("src","imagesjv/Diapositiva15.JPG")
+				break;		
   		}
   		if(!$('#variableContent').is(':visible')){
   			$("#variableContent").addClass('animated '+animation);
