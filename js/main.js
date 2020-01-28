@@ -109,7 +109,7 @@ function productos(id){
 			  var str = val.imagen;
 			  var res = str.split("/");
 			  var imgsolo = res.pop();
-			  var img = "file:///storage/emulated/0/roomservice/"+imgsolo;
+			  var img = "./roomservice/"+imgsolo;
 
               //console.log(val);
               outputProductos+='<button type="button" class="round-corners-menu-btn selectable activable" onclick="srcImg(this,'+val.id+')">'+
